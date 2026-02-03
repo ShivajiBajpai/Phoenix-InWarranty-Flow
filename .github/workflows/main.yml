@@ -39,7 +39,10 @@ jobs:
         with:
           name: Newman Report
           path: newman/*.html
-      
-
+      - name: Create GitHub page branch
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       
       
