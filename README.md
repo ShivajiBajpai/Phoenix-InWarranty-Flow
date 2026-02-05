@@ -5,6 +5,14 @@ GitHub actions will trigger the project exceution on every push to the main bran
 The HTML report is archieved and kept in the artifact section for the team to download. ALong with that they can view the report directly from the GitHub Page: https://shivajibajpai.github.io/Phoenix-InWarranty-Flow/
 The latest report is mailed to the team members using the GMAIL SMTP.
 
+## Testing Coverage
+1. Happy Flow Testing
+2. Negative testing and Edge case testing
+3. Token Testing
+4. Data Driven Testing with CSV
+5. Schema Validation
+6. Secrets management with GitHub Secrets
+
 ## Tech Stack
 1. Postman
 2. Node.JS
@@ -19,19 +27,40 @@ The latest report is mailed to the team members using the GMAIL SMTP.
 ## GitHub Pages ##
 You can directly view the latest report of the Postman test at the GitHub page link: https://shivajibajpai.github.io/Phoenix-InWarranty-Flow/
 
+## HTML Report ##
+The report will be created in the newman folder
+![Postman Report](https://github.com/ShivajiBajpai/Phoenix-InWarranty-Flow/blob/static-content/newman-report.png)
+
+## Project Structure ##
+
+```
+Phoenix InWarranty Flow
+├─ In-warranty flow collection Copy 2.postman_collection.json #Collection File
+├─ QA.postman_environment.json #Environment File
+└─ testdata.csv #Test data File
+
+```
+
+
 ## How to run the project? ##
 You can run the project on your local system. For that:
 1. Clone the project on local system: https://github.com/ShivajiBajpai/Phoenix-InWarranty-Flow.git
 2. Install NodeJS and NPM: https://nodejs.org/en/download
 3. Install Newman using: npm install -g newman
-4. Install Newman-reporter-htmlextra using: npm install -g newman-reporter-htmlextra
+4. Install Newman-reporter-htmlextra using:
+```
+npm install -g newman-reporter-htmlextra
+```
 5. Run the newman command:
-                           newman run 'In-warranty flow collection Copy 2.postman_collection.json' \
-                           -e 'QA.postman_environment.json' \
-                           -d 'testdata.csv' \
-                           -r cli,htmlextra \
-                           --reporter-htmlextra-export ./newman/index.html
+```
+newman run 'In-warranty flow collection Copy 2.postman_collection.json' \
+-e 'QA.postman_environment.json' \
+-d 'testdata.csv' \
+-r cli,htmlextra \
+--reporter-htmlextra-export ./newman/index.html
+```
 
-## HTML Report ##
-The report will be created in the newman folder
+
+
+
 
